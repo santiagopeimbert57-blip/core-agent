@@ -8,6 +8,17 @@ app = Flask(__name__)
 def index():
     return "Servidor activo"
 
+@app.route("/privacy", methods=["GET"])
+def privacy():
+    return """
+    <html><body>
+    <h1>Política de Privacidad</h1>
+    <p>Este servicio de asistente virtual no almacena conversaciones ni datos personales de los usuarios.</p>
+    <p>Los mensajes se procesan en tiempo real para generar respuestas y no se guardan en ninguna base de datos.</p>
+    <p>Contacto: santiagopeimbert57@gmail.com</p>
+    </body></html>
+    """
+
 @app.route("/webhook", methods=["GET"])
 def webhook_verificacion():
     return verificar_webhook(request)
