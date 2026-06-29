@@ -37,7 +37,7 @@ def procesar_mensaje(data):
 
 def enviar_mensaje(telefono, mensaje):
     """Sends a text message back to the user via WhatsApp Cloud API."""
-    token = os.environ.get("WHATSAPP_TOKEN")
+    token = os.environ.get("WHATSAPP_TOKEN", "").strip()
     phone_number_id = os.environ.get("WHATSAPP_PHONE_NUMBER_ID")
     url = f"https://graph.facebook.com/v19.0/{phone_number_id}/messages"
 
